@@ -68,22 +68,40 @@ body {
 
 #weatherHeader {
   color: white;
-
   font-size: 18px;
 }
 
 #imageWidget {
   max-height: calc((100vh - 30px) / 2);
-  padding: 0px 10px 0px 10px;
+  height: calc((100vh - 30px) / 2);
+  background-color: rgba(48, 86, 44, 0.8);
+  border-radius: 3px;
+  border-color: green;
+  border-style: solid;
+  border-width: 2px;
+}
+
+#imageCol {
+  padding: 0px 10px 0px 0px;
+}
+
+.carousel-inner>.item {
+  height: calc((100vh - 38px) / 2);
+  position: relative;
+
 }
 
 .carousel-inner>.item>img {
-  width: 100%;
-  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
   height: auto;
-  max-height: calc((100vh - 30px) / 2);
-  object-fit: contain;
-  padding: 0px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 #twitterWidget {}
@@ -153,6 +171,8 @@ body {
   color: #ededed;
   vertical-align: top;
   margin-bottom: 2px;
+  padding-top: 6px;
+  padding-left: 2px
 }
 
 #agendaList .list-group-item-text {
@@ -175,7 +195,12 @@ body {
   vertical-align: top;
   float: right;
   background-color: #58ac4f;
-  margin: 2px;
+  margin: 3px 3px 2px 2px;
+}
+
+#agendaList .list-group-item {
+  padding-right: 0px;
+  padding-top: 0px;
 }
 
 
