@@ -1,0 +1,113 @@
+@font-face { font-family: United Kingdom DEMO; src: url('United Kingdom DEMO.otf'); }
+
+.sidebar {
+  height: calc(100vh - 52px);
+  border-style: hidden;
+  border-top-color: #407152;
+  border-top-style: solid;
+  border-top-width: 3px;
+  background-color: #232B32;
+  padding: 0px;
+}
+
+#menuWrapper > li > a {
+  font-weight: inherit;
+  font-family: Segoe Ui;
+  font-size: 23px;
+  margin: 0px 0px 0px 10px;
+  padding: 0px 0px 0px 0px;
+  color: inherit;
+  background-color: transparent;
+  line-height: 40px;
+}
+
+#menuWrapper > li:hover {
+  /*text-shadow: 0px 0px 1px #E6E0AA;*/
+  font-weight: 500;
+}
+
+#menuWrapper > li {
+  color: #F5F3F2;
+  font-weight: 300;
+  height: 40px;
+  background-color: transparent;
+  border-style: hidden;
+  margin-bottom: 0px;
+}
+
+
+#menuWrapper > li > a > .glyphicon {
+  color: inherit;
+  line-height: inherit;
+  font-size: 24px;
+  padding-right: 4px;
+}
+
+.menuItem {
+  line-height: 40px;
+}
+.glyphicon-off {
+  color: inherit;
+  /*color: #f7f7f7;
+  text-shadow: 0px 0px 5px #262626;*/
+  font-weight: 600;
+  font-size: 25px;
+  vertical-align: top;
+  padding-top: 3px;
+}
+
+#navibar.navbar {
+  background-color: #46BF6F;
+  border-radius: 0px;
+  border-style: hidden;
+  height: 52px;
+}
+
+#navibar {
+  margin: 0px;
+  padding: 0px;
+}
+
+#navTitle .glyphicon-wrench {
+  font-size: 40px;
+  vertical-align: middle;
+}
+
+#navTitle > h2 {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-family: 'United Kingdom DEMO', sans-serif;
+  font-size: 45px;
+  color: #f7f7f7;
+  text-shadow: 0px 0px 8px #262626;
+}
+
+
+.navbar > td#welcomeText {
+    font-family: Segoe Ui, sans-serif;
+    font-size: 20px;
+}
+
+#logoutBtn {
+  font-size: 22px;
+  font-weight: 600;
+  color: #f7f7f7;
+  text-shadow: 0px 0px 5px #262626;
+  height: 50px;
+  max-height: 50px;
+  margin: 0px 0px 0px 0px;
+  background-color: transparent;
+  border-width: 0px;
+  border-left-width: 2px;
+  border-left-color: #2f2f2f;
+  border-left-style: solid;
+  border-radius: 0px;
+  padding: 0px 12px 0px 12px;
+  vertical-align: middle;
+}
+
+#logoutBtn:hover {
+  background-color: #424242;
+  color: #262626;
+  text-shadow: 0px 0px 5px #f7f7f7;
+}

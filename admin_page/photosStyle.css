@@ -1,0 +1,77 @@
+#currentPicsPanel .glyphicon {
+  font-size: 35px;
+  color: #05508E;
+}
+
+#refreshPhotosBtn, #deletePhotosBtn {
+  background-color: transparent;
+  width: 60px;
+  height: 60px;
+}
+
+#refreshPhotosBtn:hover, #deletePhotosBtn:hover {
+  text-shadow: 0px 0px 10px #FFFFFF;
+  background-color: #BEBEBE;
+}
+
+#uploadPanel #imageSelector {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#uploadPanel #fileLabel {
+    background-color: #5CB85C;
+    border-color: #4FB64F;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px 3px 5px 3px;
+    color: #F5F5F5;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 18px;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+#fileLabel .glyphicon-folder-open {
+  margin-right: 10px;
+}
+
+#uploadPanel #fileLabel > p {
+  display: inline;
+}
+
+#uploadPanel #fileLabel:hover {
+  background-color: #489148;
+}
+
+
+.imgPanel {
+  position: relative;
+}
+
+.imgPanel > .cbox {
+  position: absolute;
+  left: 9px;
+  bottom: 19px;
+  z-index: 1000;
+  box-shadow: 0px 0px 25px #F0F0F0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #292929;
+}
+
+
+.thumbnailIMG {
+  margin-bottom: 10px;
+}
+
+.imgCol {
+  padding: 0px 5px 0px 5px;
+  display: flex;
+  align-items: center;
+}
