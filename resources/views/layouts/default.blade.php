@@ -42,10 +42,7 @@
 
         @foreach ($menuItems as $item)
           <li class="nav-item">
-            <a class="nav-link has-icon" href="{{ $item->link }}">
-              <i class="{{ $item->icon }}"></i>
-              {{ $item->text }}
-            </a>
+            <a class="nav-link has-icon{{ !$item->active ?: ' active' }}" href="{{ $item->link }}"><i class="{{ $item->icon }}"></i>{{ $item->text }}</a>
           </li>
         @endforeach
 
@@ -60,7 +57,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand navbar-light fixed-top navbar-main">
     <div class="navbar-nav nav-circle">
-      {{-- <a class="nav-link nav-icon" href="#" data-toggle="sidebar"><i class="material-icons">menu</i></a> --}}
+      <a class="nav-link nav-icon" href="#" data-toggle="sidebar"><i class="material-icons">menu</i></a>
     </div>
     <ul class="navbar-nav nav-circle ml-auto">
     </ul>
@@ -81,7 +78,7 @@
 
   <!-- Main Content -->
   <main>
-
+    @yield('content')
   </main>
   <!-- /Main Content -->
 

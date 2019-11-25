@@ -6,6 +6,9 @@ use Illuminate\View\View;
 
 class MenuItems
 {
+
+    private static $active = '';
+
     public function compose(View $view)
     {
         $view->with('menuItems', $this->menuItems());
@@ -15,20 +18,27 @@ class MenuItems
     {
         return collect([
             [
-                'icon' => 'fas fa-calendar-day',
+                'icon' => 'fas fa-calendar-day fa-fw',
                 'text' => 'Agenda items',
                 'link' => route('agenda-items.index'),
             ], [
-                'icon' => 'fas fa-bullhorn',
+                'icon' => 'fas fa-bullhorn fa-fw',
                 'text' => 'Mededelingen',
                 'link' => route('agenda-items.index'),
             ], [
-                'icon' => 'fas fa-images',
+                'icon' => 'fas fa-images fa-fw',
                 'text' => 'Foto\'s',
                 'link' => route('agenda-items.index'),
             ],
         ])->map(function (array $menuItem) {
+            $menuItem['active'] = static::$active === $menuItem['text'];
+
             return (object) $menuItem;
         });
+    }
+
+    public static function activeItem(string $itemText)
+    {
+        static::$active = $itemText;
     }
 }
