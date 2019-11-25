@@ -11,5 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.scripts([
+    'resources/js/mimity-script.js',
+    'resources/js/mimity-app.js',
+    'resources/js/mimity-ajax.js',
+], 'public/js/admin-app.js');
+
+mix.styles([
+    'resources/css/mimity-styles.css',
+], 'public/css/admin-app.css');
+
+mix.copy('resources/img', 'public/img');
