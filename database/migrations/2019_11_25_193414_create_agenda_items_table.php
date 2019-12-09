@@ -21,6 +21,7 @@ class CreateAgendaItemsTable extends Migration
             $table->date('date');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
