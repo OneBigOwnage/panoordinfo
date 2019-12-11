@@ -1,4 +1,6 @@
 {
-    "/js/admin-app.js": "/js/admin-app.js",
-    "/css/admin-app.css": "/css/admin-app.css"
+    "/js/admin-app.js": "/js/admin-app.js?id=5e29763f8e7155bd022a",
+    "/css/admin-app.css": "/css/admin-app.css?id=7721b408caecba28300a",
+    "/js/screen.js": "/js/screen.js?id=b08627bd115759f3a852",
+    "/css/screen-styles.css": "/css/screen-styles.css?id=cb64e613606270e39d9d"
 }
