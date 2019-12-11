@@ -18,3 +18,9 @@ Route::get('/', function () {
 Route::view('/mimity', 'layouts.default');
 
 Route::resource('agenda-items', 'AgendaItemController');
+
+
+Route::prefix('/screen')->group(function () {
+    Route::get('/', 'ScreenController@default');
+    Route::get('/agenda-items', 'ScreenController@agendaItems');
+});
