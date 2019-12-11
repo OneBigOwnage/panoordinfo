@@ -142,3 +142,33 @@ if (items != undefined) {
   });
 }
 }
+
+
+
+
+
+
+
+
+/////////////////
+// Fresh start //
+/////////////////
+
+const AGENDA_ITEMS_URL = '/screen/agenda-items';
+
+
+const updateAgendaItemsPanel = () => {
+    fetch(AGENDA_ITEMS_URL).then(response => response.json()).then(items => {
+        const agendaItemsPanel = document.querySelector('.panel-body.tinyAgendaPanel');
+        agendaItemsPanel.innerHTML = null;
+
+        items.forEach(item => {
+            const template = document.createElement('template');
+            template.innerHTML = item.html.trim();
+
+            agendaItemsPanel.appendChild(template.content.firstChild);
+        })
+    });
+};
+
+// setTimeout(() => updateAgendaItemsPanel(), 5 * 60 * 1000);
