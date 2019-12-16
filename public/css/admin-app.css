@@ -14069,6 +14069,21 @@ time.chat-time {
 
 /*# sourceMappingURL=style.css.map */
 
+table .no-results {
+    height: 10em;
+}
+
+table .no-results span {
+    font-size: 1.75em;
+}
+
+table .no-results .no-results-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .flatpickr-calendar {
   background: transparent;
   opacity: 0;
