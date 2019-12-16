@@ -1,6 +1,7 @@
 <?php
 
 use App\AgendaItem;
+use App\Announcement;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +19,6 @@ class DatabaseSeeder extends Seeder
     private function createAgendaItems()
     {
         factory(AgendaItem::class, 8)->create();
+        factory(Announcement::class, 8)->create();
     }
 }
