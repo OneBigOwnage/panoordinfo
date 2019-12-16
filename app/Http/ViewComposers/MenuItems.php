@@ -24,7 +24,7 @@ class MenuItems
             ], [
                 'icon' => 'fas fa-bullhorn fa-fw',
                 'text' => 'Mededelingen',
-                'link' => route('agenda-items.index'),
+                'link' => route('announcements.index'),
             ], [
                 'icon' => 'fas fa-images fa-fw',
                 'text' => 'Foto\'s',
