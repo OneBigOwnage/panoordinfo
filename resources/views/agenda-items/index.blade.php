@@ -29,7 +29,7 @@
         </thead>
         <tbody>
 
-          @foreach ($items as $item)
+          @forelse ($items as $item)
             <tr>
               <td>
                 <a href="{{ route('agenda-items.show', $item) }}">{{ $item->title }}</a>
@@ -42,7 +42,21 @@
                 </div>
               </td>
             </tr>
-          @endforeach
+          @empty
+
+            <tr>
+              <td class="no-results" colspan="3">
+                <div class="no-results-container">
+                  <span>Er zijn nog geen agenda items</span>
+                  <br/>
+                  <a href="{{ route('agenda-items.create') }}" class="btn btn-lg btn-outline-primary has-icon">
+                    <i class="material-icons mr-2">add_circle_outline</i>Nieuw agenda item maken
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+          @endforelse
 
         </tbody>
       </table>
