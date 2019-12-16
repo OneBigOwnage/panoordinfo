@@ -34,6 +34,7 @@ mix.scripts([
 mix.styles([
     // Core CSS files:
     'resources/css/mimity-styles.css',
+    'resources/css/custom-admin-styles.css',
 
     // Plugins
     'node_modules/flatpickr/dist/flatpickr.css',
