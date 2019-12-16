@@ -14,7 +14,7 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        //
+        return view('announcements.index')->with('announcements', Announcement::all());
     }
 
     /**
@@ -24,7 +24,7 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
-        //
+        return view('announcements.create');
     }
 
     /**
@@ -35,7 +35,12 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Announcement::create($request->validate([
+            'title'    => 'required'                  ,
+            'contents' => 'required'                  ,
+        ]));
+
+        return redirect()->route('announcements.index');
     }
 
     /**
@@ -46,7 +51,7 @@ class AnnouncementController extends Controller
      */
     public function show(Announcement $announcement)
     {
-        //
+        return view('announcements.show')->with('announcement', $announcement);
     }
 
     /**
@@ -57,7 +62,7 @@ class AnnouncementController extends Controller
      */
     public function edit(Announcement $announcement)
     {
-        //
+        return view('announcements.edit')->with('announcement', $announcement);
     }
 
     /**
@@ -69,7 +74,12 @@ class AnnouncementController extends Controller
      */
     public function update(Request $request, Announcement $announcement)
     {
-        //
+        $announcement->update($request->validate([
+            'title'    => 'required'                  ,
+            'contents' => 'required'                  ,
+        ]));
+
+        return redirect()->route('announcements.index');
     }
 
     /**
@@ -80,6 +90,8 @@ class AnnouncementController extends Controller
      */
     public function destroy(Announcement $announcement)
     {
-        //
+        $announcement->delete();
+
+        return redirect()->route('announcements.index');
     }
 }
