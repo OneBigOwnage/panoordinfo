@@ -30,4 +30,5 @@ Route::prefix('/images')->group(function () {
 Route::prefix('/screen')->group(function () {
     Route::get('/', 'ScreenController@default');
     Route::get('/agenda-items', 'ScreenController@agendaItems');
+    Route::get('/announcements', 'ScreenController@announcements');
 });
