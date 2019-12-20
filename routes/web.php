@@ -20,6 +20,13 @@ Route::view('/mimity', 'layouts.default');
 Route::resource('agenda-items', 'AgendaItemController');
 Route::resource('announcements', 'AnnouncementController');
 
+Route::prefix('/images')->group(function () {
+    Route::get('/', 'ImagesController@index');
+    Route::post('/', 'ImagesController@upload');
+    Route::get('/{image}', 'ImagesController@show');
+    Route::delete('/{image}', 'ImagesController@destroy');
+});
+
 Route::prefix('/screen')->group(function () {
     Route::get('/', 'ScreenController@default');
     Route::get('/agenda-items', 'ScreenController@agendaItems');
