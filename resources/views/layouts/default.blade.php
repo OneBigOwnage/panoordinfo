@@ -13,6 +13,9 @@
   <!-- Main Style -->
   <link rel="stylesheet" href="{{ mix('/css/admin-app.css') }}" id="main-css">
 
+  <!-- CSRF token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <title>Panoord infoscherm</title>
 </head>
 
