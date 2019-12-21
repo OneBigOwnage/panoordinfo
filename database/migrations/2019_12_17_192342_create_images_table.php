@@ -22,6 +22,7 @@ class CreateImagesTable extends Migration
             $table->unsignedInteger('size');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
