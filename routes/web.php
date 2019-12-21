@@ -21,14 +21,14 @@ Route::resource('agenda-items', 'AgendaItemController');
 Route::resource('announcements', 'AnnouncementController');
 
 Route::prefix('/images')->group(function () {
-    Route::get('/', 'ImagesController@index');
-    Route::post('/', 'ImagesController@upload');
-    Route::get('/{image}', 'ImagesController@show');
-    Route::delete('/{image}', 'ImagesController@destroy');
+    Route::get('/', 'ImageController@index')->name('images.index');
+    Route::post('/', 'ImageController@upload')->name('images.upload');
+    Route::get('/{image}', 'ImageController@show')->name('images.show');
+    Route::delete('/{image}', 'ImageController@destroy')->name('images.destroy');
 });
 
 Route::prefix('/screen')->group(function () {
-    Route::get('/', 'ScreenController@default');
-    Route::get('/agenda-items', 'ScreenController@agendaItems');
-    Route::get('/announcements', 'ScreenController@announcements');
+    Route::get('/', 'ScreenController@default')->name('screen');
+    Route::get('/agenda-items', 'ScreenController@agendaItems')->name('screen.agenda-items');
+    Route::get('/announcements', 'ScreenController@announcements')->name('screen.announcements');
 });
