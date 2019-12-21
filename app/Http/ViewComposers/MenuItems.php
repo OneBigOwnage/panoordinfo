@@ -28,7 +28,7 @@ class MenuItems
             ], [
                 'icon' => 'fas fa-images fa-fw',
                 'text' => 'Foto\'s',
-                'link' => route('agenda-items.index'),
+                'link' => route('images.index'),
             ],
         ])->map(function (array $menuItem) {
             $menuItem['active'] = static::$active === $menuItem['text'];
