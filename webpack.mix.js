@@ -31,6 +31,8 @@ mix.scripts([
     'node_modules/flatpickr/dist/flatpickr.js',
 ], 'public/js/admin-app.js');
 
+mix.js('resources/js/fileupload.js', 'public/js/fileupload.js');
+
 mix.styles([
     // Core CSS files:
     'resources/css/mimity-styles.css',
