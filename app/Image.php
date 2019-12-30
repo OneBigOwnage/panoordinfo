@@ -28,6 +28,16 @@ class Image extends Model
     }
 
     /**
+     * Retrieve the URL to show this image in the browser.
+     *
+     * @return string The generated URL.
+     */
+    public function toShowURL()
+    {
+        return route('images.show', $this);
+    }
+
+    /**
      * Turn the image file that is linked to this record into a file response, which will show the image in the
      * browser.
      *
