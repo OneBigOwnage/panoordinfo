@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 Route::view('/mimity', 'layouts.default');
+Route::prefix('/maintenance')->group(function () {
+    Route::view('/', 'maintenance')->name('maintenance');
+    Route::get('/db-migrate', 'MaintenanceController@DBMigrate')->name('maintenance.db-migrate');
+    Route::get('/db-migrate-fresh', 'MaintenanceController@DBMigrateFresh')->name('maintenance.db-migrate-fresh');
+});
 
 Route::resource('agenda-items', 'AgendaItemController');
 Route::resource('announcements', 'AnnouncementController');

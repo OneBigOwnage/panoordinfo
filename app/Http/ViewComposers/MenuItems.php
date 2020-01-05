@@ -29,6 +29,10 @@ class MenuItems
                 'icon' => 'fas fa-images fa-fw',
                 'text' => 'Foto\'s',
                 'link' => route('images.index'),
+            ], [
+                'icon' => 'fas fa-tools fa-fw',
+                'text' => 'Maintenance',
+                'link' => route('maintenance'),
             ],
         ])->map(function (array $menuItem) {
             $menuItem['active'] = static::$active === $menuItem['text'];
