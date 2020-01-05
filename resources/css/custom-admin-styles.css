@@ -12,3 +12,43 @@ table .no-results .no-results-container {
     align-items: center;
     flex-direction: column;
 }
+
+.single-image-container {
+    /* width: 200px;*/
+
+    /* max-width: 200px; */
+    height: 120px;
+    max-height: 120px;
+    width: auto;
+}
+
+.img-thumbnail {
+    max-height: 100%;
+    width: auto;
+}
+
+.image-list {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    flex-wrap: wrap;
+}
+
+.image-list .img {
+    margin: 1rem;
+}
+
+/* File Pond styles */
+
+.filepond--root {
+    margin-bottom: 0;
+    height: 279px;
+    width: 200px;
+    max-width: 200px;
+}
+
+.image-upload-area {
+    margin-bottom: 2em;
+    width: 200px;
+    max-width: 200px;
+}
