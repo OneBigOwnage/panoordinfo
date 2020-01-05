@@ -1,7 +1,8 @@
 {
-    "/js/fileupload.js": "/js/fileupload.js?id=a12f4104d91cf7d10519",
-    "/js/admin-app.js": "/js/admin-app.js?id=5e29763f8e7155bd022a",
-    "/css/admin-app.css": "/css/admin-app.css?id=80c8e6d8d03cb44edd6f",
-    "/js/screen.js": "/js/screen.js?id=02e2324909636e49f877",
-    "/css/screen-styles.css": "/css/screen-styles.css?id=cb64e613606270e39d9d"
+    "/js/fileupload.js": "/js/fileupload.js?id=c857fe88c66e4d30a26e",
+    "/js/helpers.js": "/js/helpers.js?id=1e6794416d96dda43be6",
+    "/js/screen.js": "/js/screen.js?id=53bcc47883ffb62e18fd",
+    "/js/admin-app.js": "/js/admin-app.js?id=ace6cdb9e462b91b27a9",
+    "/css/admin-app.css": "/css/admin-app.css?id=5f34c35a76e8f69699b0",
+    "/css/screen-styles.css": "/css/screen-styles.css?id=c6b28794faf73f025aca"
 }
