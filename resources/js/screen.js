@@ -1,160 +1,33 @@
-refreshAgenda();
-refreshAnnouncements();
-updatePictures();
-// setInterval(function() {
-//   refreshAgenda();
-//   refreshAnnouncements();
-// }, 2000);
+import Flickity from 'flickity';
 
-function refreshAgenda() {
-var items = getAgendaItems();
-if (items != undefined) {
-  $('.panel-body.tinyAgendaPanel').html('');
-  items.forEach(function(item) {
-    var out = '\
-      \
-      <div class="panel tinyAgendaPanel">\
-        <div class="panel-heading">\
-          <h3 class="panel-title">\
-            <span class="glyphicon glyphicon-pushpin"></span> ' + item['item_header'] + '\
-            <span class="label dateLabel pull-right">' + item['item_date'] + '</span>\
-          </h3>\
-        </div>\
-        <div class="panel-body">' + item['item_content'] + '</div>\
-      </div>\
-    ';
-    $('.panel-body.tinyAgendaPanel').append(out);
-  });
-}
-}
+import 'flickity-imagesloaded';
+import 'flickity-fullscreen';
 
-function checkUpdate() {
-$.ajax({
-  url: 'schermFunctions.php',
-  data: {function: 'checkUpdate'},
-  datatype: 'text',
-  success: function(callback) {
-    if (callback == 1) {
-      updatePictures();
-    }
-  },
-  error: function(callback){
-    console.log('Error: ' + callback);
-  }
-});
-}
+import 'flickity/dist/flickity.min.css';
 
-function updatePictures() {
-$.ajax({
-  url: '../admin_page/DBfunctions.php',
-  data: {
-    function: 'getPhotos'
-  },
-  dataType: 'json',
-  success: function(callback) {
-    $('#carouselBody').html('');
-    $('#carouselIndicators').html('');
+const IMAGES_URL        = '/screen/images'       ;
+const AGENDA_ITEMS_URL  = '/screen/agenda-items' ;
+const ANNOUNCEMENTS_URL = '/screen/announcements';
 
-    $.each(callback, function(index, item) {
-      var helper = "";
-      var isActive = "";
-      if ((item['width'] / 762 * 454) >= item['height']) {helper = "wideHelper";} else {helper = "highHelper";}
-      if (index == 0) {
-        isActive = " active";
-        $('#carouselIndicators').append('<li data-target="#IMGcarousel" data-slide-to="0" class="active"></li>');
-      } else {
-        isActive = "";
-        $('#carouselIndicators').append('<li data-target="#IMGcarousel" data-slide-to="' + index + '"></li>');
-      }
-
-      $('#carouselBody').append('\
-        <div class="item' + isActive + '">\
-          <center>\
-            <img class="' + helper + '" src="data:image/' + item['ext'] + ';base64,' + item['photo'] + '">\
-          </center>\
-        </div>\
-            ');
+const initCarousel = () => {
+    new Flickity('.carousel-container', {
+        prevNextButtons: false,
+        pageDots: true,
+        wrapAround: true,
+        pauseAutoPlayOnHover: false,
+        autoPlay: true,
+        imagesLoaded: true,
     });
-  },
-  error: function(callback) {
-    console.log("Error: " + callback.toString());
-  }
-});
-}
+};
 
+const unloadCarousel = () => {
+    const carouselInstance = getCarouselInstance();
+    if (carouselInstance) {
+        carouselInstance.destroy();
+    }
+};
 
-function getAgendaItems() {
-var items;
-$.ajax({
-  async: false,
-  url: 'schermFunctions.php',
-  data: {
-    function: 'getAgendaItems'
-  },
-  dataType: 'json',
-  success: function(data) {
-    items = data;
-  },
-  error: function(data) {
-    console.log(data);
-  }
-});
-return items;
-}
-
-
-function getAnnouncementItems() {
-var items;
-$.ajax({
-  async: false,
-  url: 'schermFunctions.php',
-  data: {
-    function: 'getAnnouncementItems'
-  },
-  dataType: 'json',
-  success: function(data) {
-    items = data;
-  },
-  error: function(data) {
-    console.log("ERROR: " + data);
-  }
-});
-return items;
-}
-
-
-function refreshAnnouncements() {
-var items = getAnnouncementItems();
-if (items != undefined) {
-  $('.panel-body.tinyAnnouncementPanel').html('');
-  items.forEach(function(item) {
-    $('.panel-body.tinyAnnouncementPanel').append('\
-      \
-      <div class="panel tinyAnnouncementPanel">\
-        <div class="panel-heading">\
-          <h3 class="panel-title">\
-            <span class="glyphicon glyphicon-bullhorn"></span> ' + item['item_header'] + '\
-          </h3>\
-        </div>\
-      <div class="panel-body">' + item['item_content'] + '</div>\
-      </div>\
-    ');
-  });
-}
-}
-
-
-
-
-
-
-
-
-/////////////////
-// Fresh start //
-/////////////////
-
-const AGENDA_ITEMS_URL = '/screen/agenda-items';
+const getCarouselInstance = () => Flickity.data('.carousel-container');
 
 
 const updateAgendaItemsPanel = () => {
@@ -171,4 +44,63 @@ const updateAgendaItemsPanel = () => {
     });
 };
 
-// setTimeout(() => updateAgendaItemsPanel(), 5 * 60 * 1000);
+const updateAnnouncementsPanel = () => {
+    fetch(ANNOUNCEMENTS_URL).then(response => response.json()).then(items => {
+        const announcementsPanel = document.querySelector('.panel-body.tinyAnnouncementPanel');
+        announcementsPanel.innerHTML = null;
+
+        items.forEach(item => {
+            const template = document.createElement('template');
+            template.innerHTML = item.html.trim();
+
+            announcementsPanel.appendChild(template.content.firstChild);
+        });
+    });
+};
+
+const updateImagesCarousel = () => {
+    fetch(IMAGES_URL)
+        .then(response => response.json())
+        .then(async items => {
+
+            const instance = getCarouselInstance();
+
+            if (!instance) {
+                return items;
+            }
+
+            while (instance.selectedIndex) {
+                // Simply wait until we are at the first picture,
+                // as to minimize the visual impact of reloading the images from the server.
+                await new Promise((resolve, reject) => setTimeout(() => resolve(), 1000));
+            }
+
+            return items;
+        }).then(items => {
+            const carouselContainer = document.querySelector('.carousel-container');
+
+            unloadCarousel();
+
+            carouselContainer.innerHTML = null;
+
+            items.forEach(item => {
+                const template = document.createElement('template');
+                template.innerHTML = item.html.trim();
+
+                carouselContainer.appendChild(template.content.firstChild);
+            });
+
+
+            initCarousel();
+        });
+};
+
+const updateAll = () => {
+    updateAgendaItemsPanel();
+    updateAnnouncementsPanel();
+    updateImagesCarousel();
+}
+
+setTimeout(updateAll, 5 * 60 * 1000);
+
+updateAll();
