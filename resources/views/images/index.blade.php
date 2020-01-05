@@ -36,8 +36,8 @@
         <div class="overlay bg-dark"></div>
         <div class="overlay-content text-center justify-content-end">
           <div class="btn-group mb-1" role="group">
-            <button type="button" class="btn btn-text-light btn-icon rounded-circle shadow-none"><i class="material-icons">zoom_in</i></button>
-            <button type="button" class="btn btn-text-light btn-icon rounded-circle shadow-none"><i class="material-icons">edit</i></button>
+            {{-- <button type="button" class="btn btn-text-light btn-icon rounded-circle shadow-none"><i class="material-icons">zoom_in</i></button> --}}
+            {{-- <button type="button" class="btn btn-text-light btn-icon rounded-circle shadow-none"><i class="material-icons">edit</i></button> --}}
             <a href="javascript:linkWithCustomMethod('DELETE', '{{ route('images.destroy', $image) }}')" title="Verwijderen" class="btn btn-text-light btn-icon rounded-circle shadow-none text-danger"><i class="material-icons">delete</i></a>
           </div>
         </div>
