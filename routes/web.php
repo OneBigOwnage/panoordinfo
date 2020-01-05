@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'home')->name('home');
 
 Route::view('/mimity', 'layouts.default');
 Route::prefix('/maintenance')->group(function () {

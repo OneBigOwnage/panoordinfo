@@ -18,6 +18,10 @@ class MenuItems
     {
         return collect([
             [
+                'icon' => 'fas fa-home fa-fw',
+                'text' => 'Home',
+                'link' => route('home'),
+            ], [
                 'icon' => 'fas fa-calendar-day fa-fw',
                 'text' => 'Agenda items',
                 'link' => route('agenda-items.index'),
