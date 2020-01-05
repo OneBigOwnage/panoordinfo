@@ -60,6 +60,7 @@
   #announcementsPanel.panel-green > .panel-body {
     height: calc(44vh - (2 * 15px) - 40px);
     max-height: calc(44vh - (2 * 15px) - 40px);
+    overflow-y: hidden;
   }
 
   #agendaPanel.panel-green > .panel-body {
