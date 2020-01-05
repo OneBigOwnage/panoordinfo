@@ -88,6 +88,7 @@
 
   <!-- Main Scripts -->
   <script src="{{ mix('/js/admin-app.js') }}"></script>
+  <script src="{{ mix('/js/helpers.js') }}"></script>
   <script>
     window.csrf_token = '{{ csrf_token() }}';
   </script>
