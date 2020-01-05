@@ -3,108 +3,110 @@
     height: 100vh;
     max-height: 100vh;
     padding: 15px;
-  }
+}
 
-  #topRow, #bottomRow {
+#topRow,
+#bottomRow {
     padding: 0px 0px 0px 0px;
-  }
+}
 
-  #topRow {
+#topRow {
     height: calc(47vh - (2 * 15px));
     max-height: calc(47vh - (2 * 15px));
     margin-bottom: 2vh;
-  }
+}
 
-  #bottomRow {
+#bottomRow {
     height: calc(50vh - (2 * 15px));
     max-height: calc(50vh - (2 * 15px));
-  }
+}
 
-  #twitterPanel.panel-green > .panel-body {
+#twitterPanel.panel-green>.panel-body {
     height: calc(70vh);
     padding: -10px auto 0px auto;
     overflow-y: hidden;
     padding: 0px 0px 0px 0px;
-  }
+}
 
-  #fullPageContainer .panel-heading > H3 {
+#fullPageContainer .panel-heading>H3 {
     font-size: 35px;
     font-family: 'Lato', sans-serif;
     text-align: center;
     color: #F5F5F5;
-  }
+}
 
-  #fullPageContainer .panel-green > .panel-heading {
+#fullPageContainer .panel-green>.panel-heading {
     background-color: rgba(0, 93, 12, 0.94);
     border-width: medium;
     border-bottom-width: 0px;
     border-color: #142607;
     border-style: solid;
-  }
+}
 
-  #fullPageContainer .panel-green > .panel-body {
+#fullPageContainer .panel-green>.panel-body {
     background-color: rgba(37, 150, 51, 0.38);
     border-width: medium;
     border-color: #142607;
     border-style: solid;
-  }
+}
 
-  #weatherPanel.panel-body {
+#weatherPanel.panel-body {
     border-top-width: medium;
-  }
+}
 
-  #fullPageContainer .panel.panel-green {
+#fullPageContainer .panel.panel-green {
     background-color: rgba(37, 150, 51, 0);
-  }
+}
 
-  #announcementsPanel.panel-green > .panel-body {
+#announcementsPanel.panel-green>.panel-body {
     height: calc(44vh - (2 * 15px) - 40px);
     max-height: calc(44vh - (2 * 15px) - 40px);
     overflow-y: hidden;
-  }
 
-  #agendaPanel.panel-green > .panel-body {
+}
+
+#agendaPanel.panel-green>.panel-body {
     height: calc(44vh - (2 * 15px) - 40px);
     max-height: calc(44vh - (2 * 15px) - 40px);
     padding: 5px 10px 5px 10px;
     overflow-y: hidden;
-  }
+}
 
-  #picturesPanel.panel-green > .panel-body {
+#picturesPanel.panel-green>.panel-body {
     height: calc(50vh - (2 * 15px) - 40px);
     max-height: calc(50vh - (2 * 15px) - 40px);
-  }
+}
 
-  #weatherPanel.panel-green > .panel-body {
+#weatherPanel.panel-green>.panel-body {
     height: calc(50vh - 6px);
     max-height: calc(50vh - 6px);
-  }
+}
 
-  #fullPageContainer .tinyAgendaPanel > .panel-heading {
+#fullPageContainer .tinyAgendaPanel>.panel-heading {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
     background-color: rgba(0, 130, 33, 0.88);
     border-color: #000000;
     border-width: thin;
     border-style: solid;
-  }
+}
 
-  #fullPageContainer .tinyAgendaPanel .panel-heading > H3 {
+#fullPageContainer .tinyAgendaPanel .panel-heading>H3 {
     color: #07524d;
     font-size: 21pt;
     line-height: 1.25em;
     text-align: left;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-  }
+}
 
-  #tinyAgendaPanel .dateLabel {
+#tinyAgendaPanel .dateLabel {
     width: 170px;
     max-width: 170px;
     background-color: black;
-  }
+}
 
-  #fullPageContainer .tinyAgendaPanel .panel-body {
+#fullPageContainer .tinyAgendaPanel .panel-body {
     padding: 3px 2px 1px 2px;
     font-size: 10;
     font-family: 'Lato', sans-serif;
@@ -114,46 +116,46 @@
     border-color: #000000;
     border-width: thin;
     border-style: solid;
-  }
+}
 
-  #fullPageContainer .panel.tinyAgendaPanel {
+#fullPageContainer .panel.tinyAgendaPanel {
     background-color: rgba(0, 0, 0, 0);
     margin: 0px 0px 5px 0px;
-  }
+}
 
 
-  #agendaPanel .glyphicon-pushpin {
+#agendaPanel .glyphicon-pushpin {
     margin-left: 5px;
     padding-top: 5px;
     font-size: 25px;
     color: #d5dfd8;
     text-shadow: 0px 0px 5px #062a11;
-  }
+}
 
-  /*============AGENDA ITEMS END====================*/
-  /*===========ANNOUNCEMENTS START==================*/
-  #fullPageContainer .tinyAnnouncementPanel > .panel-heading {
+/*============AGENDA ITEMS END====================*/
+/*===========ANNOUNCEMENTS START==================*/
+#fullPageContainer .tinyAnnouncementPanel>.panel-heading {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
     background-color: rgba(0, 130, 33, 0.88);
     border-color: #000000;
     border-width: thin;
     border-style: solid;
-  }
+}
 
-  #fullPageContainer .tinyAnnouncementPanel .panel-heading > H3 {
+#fullPageContainer .tinyAnnouncementPanel .panel-heading>H3 {
     color: #07524d;
     font-size: 21pt;
     text-align: left;
-  }
+}
 
-  #tinyAnnouncementPanel .dateLabel {
+#tinyAnnouncementPanel .dateLabel {
     width: 170px;
     max-width: 170px;
     background-color: black;
-  }
+}
 
-  #fullPageContainer .tinyAnnouncementPanel .panel-body {
+#fullPageContainer .tinyAnnouncementPanel .panel-body {
     padding: 3px 2px 1px 2px;
     font-size: 10;
     font-family: 'Lato', sans-serif;
@@ -163,86 +165,108 @@
     border-color: #000000;
     border-width: thin;
     border-style: solid;
-  }
+}
 
-  #fullPageContainer .panel.tinyAnnouncementPanel {
+#fullPageContainer .panel.tinyAnnouncementPanel {
     background-color: rgba(0, 0, 0, 0);
     margin: 0px 0px 5px 0px;
-  }
+}
 
-  #announcementsPanel .glyphicon-bullhorn {
+#announcementsPanel .glyphicon-bullhorn {
     margin-left: 5px;
     padding-top: 5px;
     font-size: 25px;
     color: #d5dfd8;
     text-shadow: 0px 0px 8px #062a11;
-  }
+}
 
-  #announcementsPanel.panel-green > .panel-body {
+#announcementsPanel.panel-green>.panel-body {
     height: calc(44vh - (2 * 15px) - 40px);
     max-height: calc(44vh - (2 * 15px) - 40px);
     padding: 5px 10px 5px 10px;
-  }
-  /*===========ANNOUNCEMENTS END=========*/
+}
 
-  /*=============IMAGES start============*/
-  #picturesPanel.panel-green > .panel-body {
+/*===========ANNOUNCEMENTS END=========*/
+
+/*=============IMAGES start============*/
+#picturesPanel.panel-green>.panel-body {
     height: calc(50vh - (2 * 15px) - 40px);
     max-height: calc(50vh - (2 * 15px) - 40px);
     padding: 5px 10px 5px 10px;
-  }
+}
 
-  #IMGcarousel > #carouselBody.carousel-inner > .item > center > img.wideHelper {
+#IMGcarousel>#carouselBody.carousel-inner>.item>center>img.wideHelper {
     max-height: 454px;
     max-width: 739px;
     width: auto;
     height: auto;
-  }
+}
 
-  #IMGcarousel > #carouselBody.carousel-inner > .item > center > img.highHelper {
+#IMGcarousel>#carouselBody.carousel-inner>.item>center>img.highHelper {
     max-height: 454px;
     max-width: 739px;
     height: auto;
     width: auto;
-  }
+}
 
-  #IMGcarousel > .carousel-inner > .item {
+#IMGcarousel>.carousel-inner>.item {
     width: 100%;
     height: 100%;
     max-width: 100%;
     max-height: 100%;
     padding: 0px 0px 0px 0px;
-  }
+}
 
 
-  #IMGcarousel {
+#IMGcarousel {
     max-height: 100%;
     max-width: 100%;
     height: 100%;
     width: 100%;
-  }
+}
 
-  #IMGcarousel > .carousel-inner {
+#IMGcarousel>.carousel-inner {
     height: 100%;
     width: auto;
     max-width: 100%;
     max-height: 100%;
-  }
-  /*=============IMAGES END==============*/
+}
 
-  #logo {
+/*=============IMAGES END==============*/
+
+#logo {
     max-width: 31vw;
     vertical-align: bottom;
     padding: 30px 0px 0px 0px;
-  }
+}
 
-  #logoDiv {
+#logoDiv {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
     vertical-align: bottom;
-  }
+}
 
-  .twitter-timeline {
+.twitter-timeline {
     background-color: rgba(0, 93, 12, 0.73);
     margin: 0px 0px 0px 0px;
-  }
+}
+
+.carousel--image {
+    max-height: 383px;
+    max-width: 739px;
+    height: auto;
+
+    width: auto;
+}
+
+.carousel-container {
+    overflow-y: hidden;
+    max-height: 100%;
+}
+
+.carousel-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
