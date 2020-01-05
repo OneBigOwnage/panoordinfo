@@ -28,7 +28,7 @@ class ImageController extends Controller
      */
     public function upload(Request $request)
     {
-        $file = $request->file('filepond');
+        $file = $request->file('image_file');
 
         Image::create([
             'original_file_name' => $file->getClientOriginalName(),
@@ -59,6 +59,8 @@ class ImageController extends Controller
     public function destroy(Image $image)
     {
         $image->unlinkFile()->delete();
+
+        return redirect()->route('images.index');
     }
 
     /**
