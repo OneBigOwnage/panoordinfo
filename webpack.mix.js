@@ -18,14 +18,18 @@ const mix = require('laravel-mix');
 mix.version();
 
 /**
- * Admin panel assets.
+ * General asset compilation.
+ */
+mix.js('resources/js/helpers.js', 'public/js/helpers.js');
+
+/**
+ * Admin panel specific assets.
  */
 mix.scripts([
     // Core JavaScript files:
     'resources/js/mimity-script.js',
     'resources/js/mimity-app.js',
     'resources/js/mimity-ajax.js',
-    'resources/js/helpers.js',
 
     // Plugins
     'node_modules/flatpickr/dist/flatpickr.js',
@@ -44,9 +48,9 @@ mix.styles([
 
 
 /**
- * Info screen assets.
+ * Info screen specific assets.
  */
-mix.scripts([
+mix.js([
     'resources/js/screen.js'
 ], 'public/js/screen.js');
 
