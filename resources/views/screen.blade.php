@@ -83,20 +83,9 @@
                 <h3 class="panel-title">FOTO'S</h3>
               </div>
               <div class="panel-body">
-                <div id="IMGcarousel" class="carousel slide" data-ride="carousel">
-                  <!-- Indicators -->
-                  <ol id="carouselIndicators" class="carousel-indicators">
-                    <li data-target="#IMGcarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#IMGcarousel" data-slide-to="1"></li>
-                  </ol>
 
-                  <!-- Wrapper for slides -->
-                  <div id="carouselBody" class="carousel-inner">
-<!-- ============================================== -->
+                <div class="carousel-container"></div>
 
-<!-- ============================================== -->
-                  </div>
-                </div>
               </div>
             </div>
           </div>
