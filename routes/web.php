@@ -12,6 +12,8 @@
 */
 
 Route::view('/', 'home')->name('home');
+Route::get('/login', 'AuthController@loginPage')->name('login');
+Route::post('/login', 'AuthController@login');
 
 Route::view('/mimity', 'layouts.default');
 Route::prefix('/maintenance')->group(function () {
