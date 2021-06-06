@@ -71,7 +71,7 @@
           <span class="d-none d-sm-block">{{ optional(auth()->user())->name ?? 'Gebruiker' }}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-right font-size-sm">
-          <a class="dropdown-item has-icon pr-5 text-danger" href="logout"><i class="material-icons mr-2">exit_to_app</i> Logout</a>
+          <a class="dropdown-item has-icon pr-5 text-danger" href="{{ route('logout') }}"><i class="material-icons mr-2">exit_to_app</i> Logout</a>
         </div>
       </li>
     </ul>

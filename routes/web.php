@@ -42,6 +42,8 @@ Route::prefix('/screen')->group(function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::view('/', 'home')->name('home');
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+    Route::post('/users/create', 'AuthController@createUser')->name('users.create');
 
     Route::resource('agenda-items', 'AgendaItemController');
     Route::resource('announcements', 'AnnouncementController');

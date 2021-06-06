@@ -2,26 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
 class MaintenanceController extends Controller
 {
     public function DBMigrate()
     {
+        if (auth()->user()->name !== env('INITIAL_USER_NAME')) {
+            return back()->with('artisan-output', 'U moet administratorrechten hebben om deze functie te gebruiken!');
+        }
+
         Artisan::call('migrate', ['--force' => true]);
 
-        session()->flash('artisan-output', Artisan::output());
-
-        return redirect()->route('maintenance');
+        return redirect()->route('maintenance')->with('artisan-output', Artisan::output());
     }
 
     public function DBMigrateFresh()
     {
+        if (auth()->user()->name !== env('INITIAL_USER_NAME')) {
+            return back()->with('artisan-output', 'U moet administratorrechten hebben om deze functie te gebruiken!');
+        }
+
         Artisan::call('migrate:fresh', ['--force' => true]);
 
-        session()->flash('artisan-output', Artisan::output());
-
-        return redirect()->route('maintenance');
+        return redirect()->route('maintenance')->with('artisan-output', Artisan::output());
     }
 }
