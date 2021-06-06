@@ -1,0 +1,52 @@
+version: '3'
+services:
+
+  app:
+    hostname: php
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      args:
+        USER: ${USER}
+    volumes:
+      - ./:/www
+    working_dir: /www
+    expose:
+      - "9000"
+    user: "1000:1000"
+    depends_on:
+      - database
+
+  nodejs:
+    image: node:14
+    user: node
+    volumes:
+      - ./:/www
+    working_dir: /www
+
+  webserver:
+    image: nginx:latest
+    hostname: nginx
+    ports:
+        - "80:80"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/conf.d/app.conf
+      - ./:/www/
+    depends_on:
+      - app
+
+  database:
+    image: postgres:10
+    hostname: postgre
+    restart: always
+    environment:
+      POSTGRES_DB: panoord_info_dev
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
