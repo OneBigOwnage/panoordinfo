@@ -11,6 +11,25 @@
 |
 */
 
+use App\User;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
+
+Route::get('/init', function () {
+    if (Schema::hasTable((new User())->getTable()) && User::count() > 0) {
+        return redirect('/login');
+    }
+
+    if (!Schema::hasTable((new User)->getTable())) {
+        Artisan::call('migrate');
+    }
+
+    User::createInitialUser();
+
+    return redirect('/login');
+});
+
 Route::get('/login', 'AuthController@loginPage')->name('login');
 Route::post('/login', 'AuthController@login');
 
