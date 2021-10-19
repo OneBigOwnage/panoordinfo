@@ -40,6 +40,8 @@ Route::prefix('/screen')->group(function () {
     Route::get('/images', 'ScreenController@images')->name('screen.images');
 });
 
+Route::get('/images/{image}', 'ImageController@show')->name('images.show');
+
 Route::group(['middleware' => ['auth']], function () {
     Route::view('/', 'home')->name('home');
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
@@ -51,7 +53,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::prefix('/images')->group(function () {
         Route::get('/', 'ImageController@index')->name('images.index');
         Route::post('/', 'ImageController@upload')->name('images.upload');
-        Route::get('/{image}', 'ImageController@show')->name('images.show');
         Route::delete('/{image}', 'ImageController@destroy')->name('images.destroy');
     });
 
