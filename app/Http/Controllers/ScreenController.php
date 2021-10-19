@@ -50,4 +50,6 @@ class ScreenController extends Controller
     {
         return tap(ImageResource::collection(Image::all()))->withoutWrapping();
     }
+
+
 }
